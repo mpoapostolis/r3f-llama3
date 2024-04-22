@@ -32,9 +32,10 @@ export function Village(props: JSX.IntrinsicElements["group"]) {
   ) as GLTFResult;
   return (
     <group
-      scale={20}
+      scale={10}
+      rotation-y={(3 / 2) * Math.PI}
       ref={group}
-      position={[15, -0.1, 0]}
+      position={[15, -0.1, 10]}
       {...props}
       dispose={null}
     >

@@ -6,10 +6,10 @@ import { Physics } from "@react-three/rapier";
 // @ts-ignore
 import Ecctrl from "ecctrl";
 import { Scene } from "./scene";
-import { Character } from ".";
 import { Environment } from "@react-three/drei";
 import { Html, useProgress } from "@react-three/drei";
 import { useStore } from "../utils";
+import { Character } from "./character";
 
 function Loader() {
   const { progress } = useProgress();
@@ -85,10 +85,10 @@ export function Game() {
         <Physics>
           <Suspense fallback={<Loader />}>
             <Scene />
+            <Ecctrl mode="PointToMove">
+              <Character />
+            </Ecctrl>
           </Suspense>
-          <Ecctrl mode="PointToMove">
-            <Character />
-          </Ecctrl>
         </Physics>
       </Canvas>
     </div>

@@ -57,6 +57,7 @@ function Model2() {
 function Scene() {
   // @ts-ignore
   const setMoveToPoint = useGame((state) => state.setMoveToPoint);
+  const animations = useGame((state) => state.animations);
   const circleRef = useRef<Mesh>(null);
   const date = useRef(0);
   // @ts-ignore
@@ -104,6 +105,8 @@ function Scene() {
               // a quick click
               setMoveToPoint(point);
               setCurrentPoint(point.add(new Vector3(0, 0.01, 0)));
+
+              animations?.course_chapeau.play();
             }
           }}
           args={[100, 100]}
